@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:17
     ports:
       - "$PORTS"
     env_file:
@@ -10,7 +10,7 @@ services:
       - ./postgres/backup:/var/lib/postgresql/backup
     container_name: postgres
   postgres_backup:
-    image: postgres:latest
+    image: postgres:17
     container_name: postgres_backup
     depends_on:
       - postgres
